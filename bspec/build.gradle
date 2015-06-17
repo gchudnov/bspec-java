@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+project.group = GROUP
+version = VERSION_NAME
+
+dependencies {
+    testCompile "junit:junit:${JUNIT_VERSION}"
+}
+
+def hasReleaseTasks = false
+if(hasReleaseTasks) {
+    apply from: rootProject.file('release.gradle')
+}
